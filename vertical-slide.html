@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slider</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="http://49.50.107.91/nasi/wp-content/themes/nasi/js/jquery.marquee.js"></script>
+<script>
+$(function(){
+	var $mwo = $('.marquee-with-options');
+	$('.marquee').marquee();
+	$('.marquee-with-options').marquee({
+		speed: 8000,
+		gap: 10,
+		delayBeforeStart: 0,
+		direction: 'up',
+		duplicated: true,
+		pauseOnHover: true
+	});
+});
+</script>
+<style>
+.marquee-with-options{height:220px;width:100%;float:left;overflow: hidden;}
+</style>
+
+<ul class="marquee-with-options">
+   <li>
+     <a href="">Breaking News 1</a>
+     <p>
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit.                
+     </p>
+   </li>
+   
+   <li>
+     <a href="">Breaking News 2</a>
+     <p>Aliquam consequat nibh in sollicitudin semper. Nam convallis sapien nisi, ac vulputate nisi auctor blandit. Donec tincidunt varius suscipit. </p>
+   </li>
+   
+   <li>
+     <a href="">Breaking News 3</a>
+     <p>Ut ut felis suscipit sem porta molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae/p>
+   </li>
+
+   <li>
+    <a href="" title="">Breaking News 4</a>
+    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. </p>
+   </li>
+
+ </ul>
+
+</body>
+</html>
+

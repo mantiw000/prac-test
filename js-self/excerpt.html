@@ -1,0 +1,84 @@
+<!doctype html>
+ 
+<html lang="en">
+	<!-- code by webdevtrick ( https://webdevtrick.com ) -->
+<head>
+  <meta charset="utf-8">
+  <title>Excerpt</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <style>
+  .box{float:left;width:96%;font-size:13px;text-align: justify;line-height: 1.8;padding:20px;border:1px solid #e0e0e0;margin-top: 20px;margin-left:2.0%;box-sizing: border-box;font-family: arial;font-weight: 400;}
+  .readmore,.readless{cursor: pointer;color:red;}
+
+
+  </style>
+
+
+</head>
+ 
+<body>
+  <!-- content starts here -->
+  <div class="box">
+    Lorem Ipsum is simply <strong>dummy text</strong> of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  </div>
+
+  <div class="box">
+    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock.
+  </div>
+
+  <div class="box">
+    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" 
+  </div>
+
+  <div class="box">
+    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+  </div>
+
+  <div class="box">
+    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+  </div>
+  <!-- contend ends here -->
+
+  <script>
+
+
+var bxlnt = document.querySelectorAll('.box');
+
+for(var i=0;i<bxlnt.length;i++){
+  var bxcnt = bxlnt[i].innerText.split("");
+  var bxcntlnt = bxcnt.length;
+ 
+ if(bxcntlnt > 200){
+ var resbefore = bxlnt[i].innerHTML;   //  resbefore
+ var res = bxlnt[i].innerHTML.substring(0, 199);    //  res
+
+ 
+ 
+ 
+ bxlnt[i].innerHTML = `${res} `;
+ bxlnt[i].insertAdjacentHTML("beforeend", "<b class='readmore' id='readmore_"+[i]+"'>Read More...</b>");
+
+
+var rdmore = document.querySelectorAll('.readmore');
+
+// rdmore[0].addEventListener("click", function(e) {
+//       bxlnt[i].innerHTML = `${resbefore} `;
+//       bxlnt[i].insertAdjacentHTML("beforeend", "<b class='readless'>Read Less...</b>");
+//     });
+
+ }
+}
+
+
+
+
+ /* var accordionvar = document.querySelectorAll('.accordion');
+accordionvar.forEach(e => {
+  e.addEventListener("click", function() {
+      e.classList.toggle("active");
+    });
+});  */
+</script>
+  
+</body>
+</html>

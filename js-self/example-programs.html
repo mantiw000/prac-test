@@ -1,0 +1,561 @@
+<!doctype html>
+ 
+<html lang="en">
+	<!-- code by webdevtrick ( https://webdevtrick.com ) -->
+<head>
+  <meta charset="utf-8">
+  <title>Example Programs</title>
+  
+  <style>
+  
+  </style>
+
+ 
+
+
+
+</head>
+<body>
+<!-- swap two numbers starts here -->
+
+<h2>Program1 : swap program start</h2>
+
+
+<pre>
+  
+//take input from the users
+let a1 = 10;
+let b1 = 20;
+
+//using destructuring assignment
+[a1, b1] = [b1, a1];
+
+console.log(`The value of a after swapping: ${a1}`);
+console.log(`The value of b after swapping: ${b1}`);
+
+
+Output:  b1= 10,  a1= 20
+</pre>
+
+
+<script>
+//take input from the users
+let a1 = 10;
+let b1 = 20;
+
+//using destructuring assignment
+[a1, b1] = [b1, a1];
+
+console.log(`The value of a after swapping: ${a1}`);
+console.log(`The value of b after swapping: ${b1}`);
+</script>
+
+<!-- swap two numbers over here -->
+<h2>Program1 : swap program over</h2>  
+
+<hr>
+<hr>
+
+<h2>Program 2 start : Find greater than 0 number in array</h2>  
+
+<script> 
+    // input array contain some elements. 
+    var array2 = [-10, -0.20, 0.30, -40, -50 , .9]; 
+  
+    // method (return element > 0). 
+    var found2 = array2.find(function (el2) { 
+        return el2 > 0; 
+    }); 
+  
+    // Printing desired values. 
+    console.log(found2); 
+</script> 
+
+
+<pre>
+  // input array contain some elements. 
+    var array2 = [-10, -0.20, 0.30, -40, -50 , .9]; 
+  
+    // method (return element > 0). 
+    var found2 = array2.find(function (el2) { 
+        return el2 > 0; 
+    }); 
+  
+    // Printing desired values. 
+    console.log(found2); 
+
+
+    Output:  .3   //  just one number it return
+</pre>
+
+<h2>Program 2 Over : Find greater than 0 number in array</h2>  
+
+<hr>
+<hr>
+
+<h2>Program 3 Start : Check a given no is prime or not</h2>  
+
+<p><b>A prime number is a positive integer that is only divisible by 1 and itself. For example, 2, 3, 5, 7, 11 are the first few prime numbers.</b></p>
+
+<script>
+  // take input from the user
+const number3 = parseInt(prompt("Enter a positive number: "));
+let isPrime3 = true;
+
+// check if number is equal to 1
+if (number3 === 1) {
+    console.log("1 is neither prime nor composite number.");
+}
+
+// check if number is greater than 1
+else if (number3 > 1) {
+
+    // looping through 2 to number-1
+    for (let i = 2; i < number3; i++) {
+        if (number3 % i == 0) {
+            isPrime3 = false;
+            break;
+        }
+    }
+
+    if (isPrime3) {
+        console.log(`${number3} is a prime number`);
+    } else {
+        console.log(`${number3} is a not prime number`);
+    }
+}
+
+// check if number is less than 1
+else {
+    console.log("The number is not a prime number.");
+}
+</script>
+
+
+<pre>
+  // take input from the user
+const number3 = parseInt(prompt("Enter a positive number: "));
+let isPrime3 = true;
+
+// check if number is equal to 1
+if (number3 === 1) {
+    console.log("1 is neither prime nor composite number.");
+}
+
+// check if number is greater than 1
+else if (number3 > 1) {
+
+    // looping through 2 to number-1
+    for (let i = 2; i < number3; i++) {
+        if (number3 % i == 0) {
+            isPrime3 = false;
+            break;
+        }
+    }
+
+    if (isPrime3) {
+        console.log(`${number3} is a prime number`);
+    } else {
+        console.log(`${number3} is a not prime number`);
+    }
+}
+
+// check if number is less than 1
+else {
+    console.log("The number is not a prime number.");
+}
+</pre>
+
+<h2>Program 3 Over : Check a given no is prime or not</h2>  
+
+<hr>
+<hr>
+
+<h2>Program 4 start : Check in a given interval no is prime or not</h2>  
+
+<script>
+// program to print prime numbers between the two numbers
+
+// take input from the user
+const lowerNumber4 = parseInt(prompt('Enter lower number: '));
+const higherNumber4 = parseInt(prompt('Enter higher number: '));
+
+console.log(`The prime numbers between ${lowerNumber4} and ${higherNumber4} are:`);
+
+// looping from lowerNumber to higherNumber
+for (let i = lowerNumber4; i <= higherNumber4; i++) {
+    let flag4 = 0;
+
+    // looping through 2 to user input number
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) {
+            flag4 = 1;
+            break;
+        }
+    }
+
+    // if number greater than 1 and not divisible by other numbers
+    if (i > 1 && flag4 == 0) {
+        console.log(i);
+    }
+}
+</script>
+
+
+<pre>
+  // program to print prime numbers between the two numbers
+
+// take input from the user
+const lowerNumber4 = parseInt(prompt('Enter lower number: '));
+const higherNumber4 = parseInt(prompt('Enter higher number: '));
+
+console.log(`The prime numbers between ${lowerNumber4} and ${higherNumber4} are:`);
+
+// looping from lowerNumber to higherNumber
+for (let i = lowerNumber4; i <= higherNumber4; i++) {
+    let flag4 = 0;
+
+    // looping through 2 to user input number
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) {
+            flag4 = 1;
+            break;
+        }
+    }
+
+    // if number greater than 1 and not divisible by other numbers
+    if (i > 1 && flag4 == 0) {
+        console.log(i);
+    }
+}
+</pre>
+
+<h2>Program 4 Over : Check in a given interval no is prime or not</h2>  
+
+<hr>
+<hr>
+
+<h2>Program 5 Start : Check febonic series upto n given terms</h2>  
+
+<p><b>The Fibonacci sequence is the integer sequence where the first two terms are 0 and 1. After that, the next term is defined as the sum of the previous two terms.</b></p>
+<p>A fibonacci sequence is written as:</p>
+<p><b>Example: </b> 0, 1, 1, 2, 3, 5, 8, 13, 21, ...</p>
+
+<script>
+  // program to generate fibonacci series up to n terms
+
+// take input from the user
+const number5 = parseInt(prompt('Enter the number of terms for febonic series: '));
+let n1_5 = 0, n2_5 = 1, nextTerm5;
+
+console.log('Fibonacci Series:');
+
+for (let i = 1; i <= number5; i++) {
+    console.log(n1_5);
+    nextTerm5 = n1_5 + n2_5;
+    n1_5 = n2_5;
+    n2_5 = nextTerm5;
+}
+</script>
+
+<pre>
+// program to generate fibonacci series up to n terms
+// take input from the user
+const number5 = parseInt(prompt('Enter the number of terms for febonic series: '));
+let n1_5 = 0, n2_5 = 1, nextTerm5;
+
+console.log('Fibonacci Series:');
+
+for (let i = 1; i <= number5; i++) {
+    console.log(n1_5);
+    nextTerm5 = n1_5 + n2_5;
+    n1_5 = n2_5;
+    n2_5 = nextTerm5;
+}
+
+</pre>
+
+<h2>Program 5 Over : Check febonic series upto n given terms</h2>  
+
+<hr>
+<hr>
+
+<h2>Program 6 Start : Fibonacci Sequence Up to a Certain Number</h2>  
+
+<p><b>The Fibonacci sequence is the integer sequence where the first two terms are 0 and 1. After that, the next term is defined as the sum of the previous two terms.</b></p>
+<p>A fibonacci sequence is written as:</p>
+<p><b>Example: </b> 0, 1, 1, 2, 3, 5, 8, 13, 21, ...</p>
+
+<script>
+// program to generate fibonacci series up to a certain number
+
+// take input from the user
+const number6 = parseInt(prompt('Enter a positive number for second Febonic Series till a certain number:'));
+let n1_6 = 0, n2_6 = 1, nextTerm6;
+
+console.log('Fibonacci Series:');
+console.log(n1_6); // print 0
+console.log(n2_6); // print 1
+
+nextTerm6 = n1_6 + n2_6;
+
+while (nextTerm6 <= number6) {
+
+    // print the next term
+    console.log(nextTerm6);
+
+    n1_6 = n2_6;
+    n2_6 = nextTerm6;
+    nextTerm6 = n1_6 + n2_6;
+}
+</script>
+
+<pre>
+// program to generate fibonacci series up to a certain number
+// take input from the user
+const number6 = parseInt(prompt('Enter a positive number for second Febonic Series till a certain number:'));
+let n1_6 = 0, n2_6 = 1, nextTerm6;
+
+console.log('Fibonacci Series:');
+console.log(n1_6); // print 0
+console.log(n2_6); // print 1
+
+nextTerm6 = n1_6 + n2_6;
+
+while (nextTerm6 <= number6) {
+
+    // print the next term
+    console.log(nextTerm6);
+
+    n1_6 = n2_6;
+    n2_6 = nextTerm6;
+    nextTerm6 = n1_6 + n2_6;
+}
+</pre>
+
+<h2>Program 6 Over : Fibonacci Sequence Up to a Certain Number</h2>
+
+<hr>
+<hr>
+
+<h2>Program 7 Start : Find Factorial of a Number</h2>
+
+<script>
+// program to find the factorial of a number
+
+// take input from the user
+const number7 = parseInt(prompt('Enter a positive integer for factorial: '));
+
+// checking if number is negative
+if (number7 < 0) {
+    console.log('Error! Factorial for negative number does not exist.');
+}
+
+// if number is 0
+else if (number7 === 0) {
+    console.log(`The factorial of ${number7} is 1.`);
+}
+
+// if number is positive
+else {
+    let fact7 = 1;
+    for (i = 1; i <= number7; i++) {
+        fact7 *= i;
+    }
+    console.log(`The factorial of ${number7} is ${fact7}.`);
+}
+</script>
+
+<pre>
+// program to find the factorial of a number
+// take input from the user
+const number7 = parseInt(prompt('Enter a positive integer for factorial: '));
+
+// checking if number is negative
+if (number7 < 0) {
+    console.log('Error! Factorial for negative number does not exist.');
+}
+
+// if number is 0
+else if (number7 === 0) {
+    console.log(`The factorial of ${number7} is 1.`);
+}
+
+// if number is positive
+else {
+    let fact7 = 1;
+    for (i = 1; i <= number7; i++) {
+        fact7 *= i;
+    }
+    console.log(`The factorial of ${number7} is ${fact7}.`);
+}
+</pre>
+
+
+<h2>Program 7 Over : Find Factorial of a Number</h2>
+<hr>
+<hr>
+
+<h2>Program 8 start : Reverse a Number Program in JavaScript</h2>
+
+  <script>
+
+var a_8,no_8,b_8,temp_8=0;
+
+
+no_8 = parseInt(prompt('Enter a positive integer for make reverse: '));
+
+
+b_8=no_8;
+while(no_8>0)
+{
+a_8=no_8%10;
+no_8=parseInt(no_8/10);
+temp_8=temp_8*10+a_8;
+}
+alert(temp_8);
+
+</script>
+
+<pre>
+  var a_8,no_8,b_8,temp_8=0;
+
+
+no_8 = parseInt(prompt('Enter a positive integer for make reverse: '));
+
+
+b_8=no_8;
+while(no_8>0)
+{
+a_8=no_8%10;
+no_8=parseInt(no_8/10);
+temp_8=temp_8*10+a_8;
+}
+alert(temp_8);
+</pre>
+
+<h2>Program 8 Over : Reverse a Number Program in JavaScript</h2>
+<hr>
+<hr>
+
+<h2>Program 9 Start : Reverse a string in JavaScript using for loop</h2>
+
+<script>
+// program to reverse a string
+
+function reverseString9(str9) {
+
+    // empty string
+    let newString9 = "";
+    for (let i = str9.length - 1; i >= 0; i--) {
+        newString9 += str9[i];
+    }
+    return newString9;
+}
+
+// take input from the user
+const string9 = prompt('Enter a string for make it reverse by using For Loop: ');
+
+const result9 = reverseString9(string9);
+console.log(result9);
+</script>
+
+<pre>
+  function reverseString9(str9) {
+
+    // empty string
+    let newString9 = "";
+    for (let i = str9.length - 1; i >= 0; i--) {
+        newString9 += str9[i];
+    }
+    return newString9;
+}
+
+// take input from the user
+const string9 = prompt('Enter a string for make it reverse by using For Loop: ');
+
+const result9 = reverseString9(string9);
+console.log(result9);
+</pre>
+
+
+<h2>Program 9 Over : Reverse a string in JavaScript using for loop</h2>
+
+
+<hr>
+<hr>
+
+<h2>Program 10 Start : Sum all array elements in ES5 format and spread operator</h2>
+
+<script>
+   function sum10(...sprd10){
+    var total10 = 0;
+    for(i of sprd10){
+      total10 += i;
+    }
+    console.log(`Value of Total 10 is ${total10}`);
+    console.log(...sprd10);
+    console.log(`sprd10 is ${sprd10}`);
+  }
+
+  sum10(1,3,5,7,9);  
+</script>
+
+<pre>
+  function sum10(...sprd10){
+    var total10 = 0;
+    for(i of sprd10){
+      total10 += i;
+    }
+    console.log(`Value of Total 10 is ${total10}`);
+    console.log(...sprd10);
+    console.log(`sprd10 is ${sprd10}`);
+  }
+
+ sum10(1,3,5,7,9);  
+</pre>
+
+
+<h2>Program 10 Over : Sum all array elements in ES5 format and spread operator</h2>
+<hr>
+<hr>
+
+<hr>
+<hr>
+
+<h2>Program 11 Start : Sum all array elements in ES6 format and spread operator</h2>
+
+<script>
+  var sum11 = (...sprd11) => {
+    var total11 = 0;
+    for(i of sprd11){
+      total11 += i;
+    }
+    console.log(`Value of Total 11 is ${total11}`);
+    console.log(...sprd11);
+    console.log(`sprd11 is ${sprd11}`);
+  }
+  sum11(1,3,5,7,9,30); 
+</script>
+
+<pre>
+  function sum11(...sprd11){
+    var total11 = 0;
+    for(i of sprd11){
+      total11 += i;
+    }
+    console.log(`Value of Total 11 is ${total11}`);
+    console.log(...sprd11);
+    console.log(`sprd11 is ${sprd11}`);
+  }
+
+ sum11(1,3,5,7,9);  
+</pre>
+
+
+<h2>Program 11 Over : Sum all array elements in ES6 format and spread operator</h2>
+<hr>
+<hr>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+ 
+<html lang="en">
+	<!-- code by webdevtrick ( https://webdevtrick.com ) -->
+<head>
+  <meta charset="utf-8">
+  <title>Megamenu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <style>
+
+    .megamenu{float:left;width:100%;display: table;margin:0px;padding:0px;}
+    .megamenu li{list-style: none;position: relative;border:1px solid #f0f0f0;border-right: none;display: table-cell;vertical-align: middle;text-align: center;}
+    .megamenu li a{display: block;font-size:15px;text-align: center;padding:10px 0px;}
+    .megamenu li .submenu{height:0px;transition: all ease-in-out 0.5s;overflow: hidden;width:240px;position: absolute;left:0px;margin:0px;padding:0px;}
+    
+    .megamenu li .submenu li{display: block;width:100%;border-right: 1px solid #f0f0f0;border-top:none;text-align: left;}
+    .megamenu li .submenu li a{padding:10px;text-align: left;}
+    .megamenu li .submenu li .submenu{left:100%;top:0px;}
+    .megamenu li .fa{position: absolute;right: 10px;top:9px;color: blue;transition: all ease-in-out 0.5s;z-index: 10;}
+
+    .mobicon{display: none;}
+    .megamenubx{position: relative;z-index: 100;}
+
+
+    @media (min-width:992px){
+  	.megamenu li:hover > .submenu{height: auto;overflow: visible;}
+    .megamenu > li > ul > li:hover > .fa{transform: rotate(-90deg);}
+    }
+
+    @media (max-width:991px){
+      .mobicon{display: inline-block;height:40px;width:45px;padding:5px;position: absolute;border:1px solid blue;right: 20px;cursor: pointer;box-sizing: border-box;}
+      .mobicon span{display: inline-block;width:100%;height: 5px;background: blue;position: relative;top:3px;opacity: 1;transition: all ease-in-out 0.5s;}
+      .mobicon:before{content:'';position: absolute;top:5px;background: blue;height: 5px;left:5px;right:5px;transform: rotate(0deg);transition: all ease-in-out 0.5s;}
+      .mobicon:after{content:'';position: absolute;bottom:5px;background: blue;height: 5px;left:5px;right:5px;transform: rotate(0deg);transition: all ease-in-out 0.5s;}
+      .mobicon.active{border:1px solid #fff;}
+      .mobicon.active span{opacity: 0;}
+      .mobicon.active:before{top:17px;transform: rotate(45deg);background: #fff;}
+      .mobicon.active:after{bottom:16px;transform: rotate(-45deg);background: #fff;}
+      .megamenu{display: block;position: fixed;width:240px;top:20px;left:-240px;transition: all ease-in-out 0.5s;background: #fff;}
+      .megamenu.active{left:0px;}
+      .megamenu li{width:100%;display: block;text-align: left;}
+      .megamenu li a{text-align: left;padding-left:10px;}
+      .megamenu li .submenu,.megamenu li .submenu li .submenu{left:0px;top:0px;position:relative;}
+      .megamenu li .submenu.active{height: auto;}
+
+      .bodyoverlay{position: fixed;top:0px;left:0px;width:0px;height: 0px;background: rgb(0 0 0 / 70%);}
+      .bodyoverlay.active{width:100%;height: 100vh;z-index: 1;}
+    }
+
+  </style>
+
+</head>
+<body>
+<!-- content starts here -->
+  
+  <nav class="megamenubx">
+    <div class="mobicon"><span></span></div>
+    <ul class="megamenu">
+      <li><a href="">Menu1</a></li>
+      <li><a href="">Menu2</a></li>
+      <li><a href="">Menu3</a>
+        <ul class="submenu">
+          <li><a href="">Submenu1</a></li>
+          <li><a href="">Submenu2</a></li>
+          <li><a href="">Submenu3</a></li>
+          <li><a href="">Submenu4</a>
+              <ul class="submenu submenuinner">
+                <li><a href="">Submenu2-1</a></li>
+                <li><a href="">Submenu2-2</a></li>
+                <li><a href="">Submenu2-3</a></li>
+                <li><a href="">Submenu2-4</a></li>
+                <li><a href="">Submenu2-5</a></li>
+              </ul>
+          </li>
+          <li><a href="">Submenu5</a></li>
+        </ul>
+      </li>
+      <li><a href="">Menu4</a></li>
+      <li><a href="">Menu5</a>
+        <ul class="submenu">
+          <li><a href="">Submenu2-1</a></li>
+          <li><a href="">Submenu2-2</a></li>
+          <li><a href="">Submenu2-3</a></li>
+          <li><a href="">Submenu2-4</a>
+              <ul class="submenu submenuinner">
+                <li><a href="">Submenu2-1</a></li>
+                <li><a href="">Submenu2-2</a></li>
+                <li><a href="">Submenu2-3</a></li>
+                <li><a href="">Submenu2-4</a></li>
+                <li><a href="">Submenu2-5</a></li>
+              </ul>
+          </li>
+          <li><a href="">Submenu2-5</a></li>
+        </ul>
+      </li>
+      <li><a href="">Menu6</a></li>
+      <li><a href="">Menu7</a>
+        <ul class="submenu">
+          <li><a href="">Submenu3-3</a></li>
+          <li><a href="">Submenu3-3</a></li>
+          <li><a href="">Submenu3-3</a></li>
+          <li><a href="">Submenu3-4</a></li>
+          <li><a href="">Submenu3-5</a></li>
+        </ul>
+      </li>
+      <li><a href="">Menu8</a></li>
+    </ul>
+  </nav>
+  
+
+
+<script type="text/javascript">
+
+var screenwidth = window.innerWidth;
+console.log(screenwidth);
+
+var x = document.getElementsByClassName("submenu");
+var i;
+for (i = 0; i < x.length; i++) {
+  x[i].parentNode.insertAdjacentHTML("afterbegin", "<i class='fa fa-chevron-down' aria-hidden='true'></i>");
+}
+
+if(screenwidth < 992)
+{
+
+  // insert body overlay
+  var bodytg = document.querySelector("body");
+  bodytg.insertAdjacentHTML("afterbegin", "<div class='bodyoverlay'></div>");
+  let bodyoverlayclass = document.getElementsByClassName("bodyoverlay");
+
+ let x = document.getElementsByClassName("mobicon");
+ // x[0].insertAdjacentHTML("afterbegin", "<div class='navicon'></div>");
+ x[0].addEventListener("click", function() {
+      this.classList.toggle("active");
+      let y = document.getElementsByClassName('megamenu');
+      y[0].classList.toggle("active");
+      
+      //  for toggle body overlay
+      bodyoverlayclass[0].classList.toggle("active");
+
+    });
+
+
+// submneu toggle start
+
+
+let faicn = document.getElementsByClassName("fa-chevron-down");
+var faicnlnt = faicn.length;
+console.log(`fav icon length is ${faicnlnt}`);
+var j;
+for (j = 0; j < faicn.length; j++) {
+    faicn[j].addEventListener("click", function() {
+    //  console.log(`drop down click`);
+
+      this.nextElementSibling.nextElementSibling.classList.toggle("active");
+    
+      /* var submenunav = this.nextElement.children;
+      var subnavlngth = submenunav.length;
+      console.log(`this is subnavlngth : ${subnavlngth}`);
+      submenunav[2].classList.toggle("active");  */
+
+    });
+}
+
+
+
+}
+
+</script>
+
+</body>
+</html>

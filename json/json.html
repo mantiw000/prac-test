@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Json data</title>
+<style>
+table {
+    width: 50%;
+}
+th {
+    background: #f1f1f1;
+    font-weight: bold;
+    padding: 6px;
+}
+td {
+    background: #f9f9f9;
+    padding: 6px;
+}
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+ $.ajax({
+    url: 'data.json',
+  //  dataType: 'json',
+    success: function(data) {
+        for (var i=0; i<data.length; i++) {
+            var row = $('<tr><td>' + data[i].zipcode+ '</td><td>' + data[i].city + '</td><td>' + data[i].county + '</td></tr>');
+            $('#myTable').append(row);
+        }
+    },
+    error: function(jqXHR, textStatus, errorThrown){
+        alert('Error: ' + textStatus + ' - ' + errorThrown);
+    }
+});  
+
+</script>
+</head>
+
+<body>
+<table id="myTable">
+    <tr>
+        <th>Zipcode</th>
+        <th>City</th>
+        <th>County</th>
+    </tr>
+</table>
+
+</body>
+</html>

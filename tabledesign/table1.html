@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test Table HTML</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="style1.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $('.loadlink').click(function(e) {
+        $('.custom-formetted-tbl table tr:nth-child(1n+7)').slideToggle();
+		var laodtxt = $(this).html();
+		console.log(laodtxt);
+		if(laodtxt == 'Load More')
+		{
+			laodtxt = 'Hide';	
+			$(this).html(laodtxt);
+		}
+		else
+		{
+			laodtxt = 'Load More';	
+			$(this).html(laodtxt);	
+		}
+    });
+});
+</script>
+
+</head>
+
+<body>
+	<div class="container-fluid">
+    	<div class="row">
+        	<div class="container custom-formetted-tbl">
+            	<table>
+                	<tr>
+                    	<th>
+                        	Account
+                        </th>
+                        <th class="text-right">
+                        	Available Cash
+                            <br>
+                            <span class="headsubtxt">Today's Change</span>
+                        </th>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-danger">This is small red text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-success">This is small green text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-danger">This is small red text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-success">This is small green text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-danger">This is small red text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-success">This is small green text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-danger">This is small red text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-success">This is small green text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-danger">This is small red text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-success">This is small green text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-danger">This is small red text</span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	This is Content
+                        </td>
+                        <td class="text-right">
+                        	This is content1
+                            <br>
+                            <span class="smalltxt text-success">This is small green text</span>
+                        </td>
+                    </tr>
+                </table>
+                
+                <div class="text-center loadbtnbx"><a href="javascript:void(0);" class="loadlink">Load More</a></div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

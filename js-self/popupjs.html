@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<style>
+body{margin:0px;padding:0px;font-family:arial;}
+.bodytgdiv{float:left;width:100%;margin:0px;padding:0px;text-align: center;height: 100vh;position: relative;}
+.bodytgdiv h1{font-size:36px;position: absolute;left:50%;top:50%;transform: translate(-50%,-50%);width:auto;margin:0px;padding:0px;}
+
+.bgoverlay{position: fixed;top:0px;bottom:0px;left:0px;right:0px;width:100%;height: 100vh;background: rgb(0 0 0 / .6);z-index:100;}
+.pphtml{position: absolute;width:600px;height:400px;background: #fff;transform: translate(-50%,-50%);left:50%;top:50%;z-index:1000;}
+.pphtml h1{position: relative;transform: translate(-50%,-50%);left:50%;top:50%;text-align: center;width:100%;}
+.pphtml .closebtn{position: absolute;top:0px;right:0px;}
+</style>
+
+<body class="bodytg" id="bodytg">
+	<div class="bodytgdiv">
+	<h1 class="" id="div_content">This is popup js page</h1>
+	</div>
+</body>
+</html>
+<script>
+	var js1;
+ js1 = () => {
+ return '<div class="bgoverlay"></div><div class="pphtml"><span class="closebtn" onclick="return closefun();">X</span><h1>This is popup</h1></div>';
+}
+
+var x = document.getElementsByClassName('bodytg');
+x[0].insertAdjacentHTML("afterend", js1());
+
+function closefun(){
+//	document.getElementsByClassName("pphtml")[0].style.display = "none";
+	var myobj1 = document.getElementsByClassName("pphtml");
+	myobj1[0].remove();
+	var myobj = document.getElementsByClassName("bgoverlay");
+	myobj[0].remove();
+}
+
+</script>

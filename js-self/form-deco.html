@@ -1,0 +1,84 @@
+<!doctype html>
+ 
+<html lang="en">
+	<!-- code by webdevtrick ( https://webdevtrick.com ) -->
+<head>
+  <meta charset="utf-8">
+  <title>Form Decoration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <style>
+  	.fullline{width:600px;float:left;position: relative;margin-bottom: 20px;clear: both;padding-top:30px;}
+    .formlbl{position: absolute;left:10px;top:40px;font-size:14px;background: #fff;transition: all ease-in-out 0.5s;padding:0px;border:1px solid transparent;border-radius: 0px;}
+    .fullline.active .formlbl{font-size:12px;background: #f0f0f0;border:1px solid #c0c0c0;padding:5px 10px;top:0px;left:0px;border-radius: 3px;}
+    .forminpt{float:left;width:100%;padding:10px;background: transparent;border-radius: 5px;}
+  </style>
+
+
+
+
+</head>
+<body>
+<form>
+<div class="fullline">
+  <label class="formlbl">This is Label 1</label>
+  <input type="text" class="forminpt" />
+</div>
+<br>
+<br>
+<div class="fullline">
+  <label class="formlbl">This is Label 2</label>
+  <input type="text" class="forminpt" />
+</div>
+<br>
+<br>
+<div class="fullline">
+  <label class="formlbl">This is Label 3</label>
+  <input type="text" class="forminpt" value="frcr" />
+</div>
+<br>
+<br>
+<div class="fullline">
+  <label class="formlbl">This is Label 4</label>
+  <input type="text" class="forminpt" />
+</div>
+<br>
+<br>
+<div class="fullline">
+  <label class="formlbl">This is Label 5</label>
+  <input type="text" class="forminpt" />
+</div>
+<br>
+<br>
+<div class="fullline">
+  <input type="Submit" class="frmsbmt" />
+</div>
+</form>
+
+
+ 
+
+<script type="text/javascript">
+    var x = document.querySelectorAll(".forminpt");
+    var i;
+    for (i = 0; i < x.length; i++) {
+
+         if(x[i].value != ""){
+            x[i].parentElement.classList.add("active");
+         }
+    
+         x[i].addEventListener("focus", function() {
+          this.parentElement.classList.add("active");
+          });
+
+         x[i].addEventListener("blur", function() {
+            if(this.value == "" || this.value == " "){
+            this.parentElement.classList.remove("active");
+            }
+         });
+
+      };
+</script>
+
+
+</body>
+</html>

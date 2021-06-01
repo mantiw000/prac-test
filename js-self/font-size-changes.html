@@ -1,0 +1,94 @@
+<!doctype html>
+ 
+<html lang="en">
+	<!-- code by webdevtrick ( https://webdevtrick.com ) -->
+<head>
+  <meta charset="utf-8">
+  <title>Font Size Changes</title>
+  
+  <style>
+    div{font-size:16px;}
+    p{font-size:24px;}
+    h1{font-size:30px;}
+    span{font-size: 12px;}
+  </style>
+
+</head>
+ 
+<body>
+
+<ul>
+  <li class="fontplus">A+</li>
+  <li class="fontdefault">A</li>
+  <li class="fontminus">A-</li>
+</ul>
+
+  <!-- content starts here -->
+  <h1>This is heading <span>This is heading span</span></h1>
+  <p>This is paragraph</p>
+  <div>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</div>
+
+<!-- content ends here -->
+
+  <script>
+
+
+var fontdflt = 2;
+        var i =0;
+         
+         // font increase start
+         document.querySelector(".fontplus").addEventListener("click", function() {
+             if (fontdflt < 4){
+                var starplus = document.querySelectorAll('*');
+                for (i = 0; i < starplus.length; i++) {
+                  // starplus[i].style.color = "green";
+                    let x = starplus[i].style.fontSize;
+                    console.log(x);
+                        x = x[i] + 1;
+                        starplus[i].style.fontSize = x;
+
+                  }
+             }
+
+             fontdflt = fontdflt + 1;
+
+         });
+
+         // font decrease start
+         document.querySelector(".fontminus").addEventListener("click", function() {
+             if (fontdflt > 0){
+                var starplus = document.querySelectorAll('*');
+                for (i = 0; i < starplus.length; i++) {
+                  // starplus[i].style.color = "green";
+                    let x = starplus[i].style.fontSize;
+                    console.log(x);
+                        x = x[i] + 1;
+                        starplus[i].style.fontSize = x;
+
+                  }
+             }
+
+             fontdflt = fontdflt - 1;
+
+         });
+
+         // font decrease start
+         document.querySelector(".fontdefault").addEventListener("click", function() {
+             
+                var starplus = document.querySelectorAll('*');
+                for (i = 0; i < starplus.length; i++) {
+                  // starplus[i].style.color = "green";
+                    let x = starplus[i].style.fontSize;
+                    console.log(x);
+                        x = x[i] + 1;
+                        starplus[i].style.fontSize = x;
+
+                  }
+             
+             fontdflt = 2;
+
+         });
+</script>
+  
+</body>
+</html>

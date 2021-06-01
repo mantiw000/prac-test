@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<style>
+body{margin:0px;padding:0px;font-family:arial;}
+.container{width:100%;max-width:1300px;margin:0px auto;}
+.row{display:block;position: relative;width:100%;padding-top:50px;margin-bottom: 50px;}
+.row .formbx{display: grid;position: relative;width:100%;grid-template-columns: 32% 32% 32%;grid-gap:20px 2%;padding-top:50px;justify-content: space-between;margin-bottom: 50px;}
+.addbtn{position: absolute;right:0px;display: inline-block;padding:5px 15px;border-radius: 3px;color:#fff;background: green;border:2px solid green;cursor: pointer;transition: all ease-in-out 0.5s;z-index:99;}
+.addbtn:hover{background: transparent;color:green;}
+.removebtn{position: absolute;right:0px;display: inline-block;padding:5px 15px;border-radius: 3px;color:#fff;background: red;border:2px solid green;cursor: pointer;transition: all ease-in-out 0.5s;}
+.removebtn:hover{background: transparent;color:red;}
+.inptbx label{float:left;width:100%;font-size:13px;font-weight: bold;}
+.inptbx label + *{float:left;width:100%;padding:5px;border-radius: 3px;border:1px solid #ddd;}
+
+
+</style>
+<script>
+function formaddremove() {
+ 	var x = document.getElementsByClassName("formbx")[0].innerHTML;
+    console.log(x);
+	var newNode = document.createElement('div');
+    newNode.className = 'formbx';
+    newNode.innerHTML = `${x}`;
+	document.getElementsByClassName("formbx")[0].after(newNode);
+
+}
+
+</script>
+
+<body class="bodytg" id="bodytg">
+	<!-- container start-->
+	<div class="container">
+		<form>
+			<!-- row start-->
+			<div class="row">
+
+				<span onclick="formaddremove()" class="addbtn">+ Add Block</span>
+				<!-- formbx start-->
+				<div class="formbx">
+
+				<div class="inptbx">
+					<label>First Name</label>
+					<input type="text">
+				</div>
+
+				<div class="inptbx">
+					<label>Last Name</label>
+					<input type="text">
+				</div>
+
+				<div class="inptbx">
+					<label>Work</label>
+					<input type="text">
+				</div>
+
+				<div class="inptbx">
+					<label>Office</label>
+					<input type="text">
+				</div>
+
+				<div class="inptbx">
+					<label>Phone No.</label>
+					<input type="Phone">
+				</div>
+
+				<div class="inptbx">
+					<label>Address</label>
+					<input type="text">
+				</div>
+
+				</div><!-- formbx over-->
+			</div><!-- row over-->
+		</form>
+	</div>	<!-- container over-->
+</body>
+</html>
+<script>
+
+</script>

@@ -1,0 +1,64 @@
+body,html{margin:0px;padding:0px;width:100%;float:left;font-family:Verdana, Geneva, sans-serif;}
+*{box-sizing:border-box;}
+section{float:left;width:100%;clear:both;}
+.scene1{position:relative;width:100%;height:550px;background:linear-gradient(#111425,#3751e0);background-attachment:fixed;overflow:hidden;}
+.moon{position:absolute;left:40px;top:25px;width:100px;height:100px;background:#fff;border-radius:50%;z-index:10;}
+.moon:after{content:'';background:linear-gradient(#111425,#3751e0);position:absolute;left:15px;top:-15px;width:100%;height:100%;border-radius:50%;}
+.forestimg{position:absolute;bottom:0px;left:0px;width:100%;z-index:11;transform:scale(1.2);}
+.scene1 a{background:#fff;border-radius:50%;position:absolute;animation:scene1star linear infinite;}
+@keyframes scene1star{
+	0%{opacity:0;transformY:(0);}
+	10%,90%{opacity:1;}	
+	100%{opacity:0;transformY:(-100px);}
+}
+.cloudimg1{position:absolute;top:0px;left:0px;z-index:9;animation:scene1cloud1 10s linear infinite;max-width:100%;top:0px;}
+.cloudimg2{position:absolute;top:0px;left:0px;z-index:9;animation:scene1cloud1 20s linear infinite;max-width:50%;top:120px;}
+.cloudimg3{position:absolute;top:0px;left:0px;z-index:9;animation:scene1cloud1 80s linear infinite;max-width:90%;top:200px;}
+.cloudimg4{position:absolute;top:0px;left:0px;z-index:9;animation:scene1cloud1 30s linear infinite;max-width:80%;top:50px;animation-delay:-20s;}
+.cloudimg5{position:absolute;top:0px;left:0px;z-index:9;animation:scene1cloud1 40x linear infinite;max-width:20%;top:300px;animation-delay:20s;}
+.cloudimg6{position:absolute;top:0px;left:0px;z-index:9;animation:scene1cloud1 100s linear infinite;max-width:70%;top:200px;animation-delay:30s;}
+
+@keyframes scene1cloud1{
+	0%{transform:translateX(-100%) scale(1);}
+	100%{transform:translateX(400%) scale(1.5);}		
+}
+
+.vanilla1{width:100%;float:left;margin:0px;padding:0px;display:flex;background:#373737;justify-content:center;align-items:center;height:350px;flex-wrap:wrap;}
+.vanilla1 h1{font-size:20px;color:#fff;margin:0px 0px 5px;letter-spacing:1px;position:relative;width:100%;text-align:center;}
+.vanilla1 form{position:relative;}
+.vanilla1 form > *{float:left;width:100%;}
+.vanilla1 form #emailfield{width:100%;background:#292929;border-radius:6px;outline:none;border:none;color:#fff;padding:10px;font-size:18px;}
+.vanilla1 form .inputbox{position:relative;margin-bottom:20px;}
+
+
+.vanilla2{margin:0px;padding:0px;background:#000;width:100%;float:left;min-height:200vh;}
+.vanilla2 header{position:fixed;left:0px;width:100%;top:0px;display:flex;justify-content:space-between;align-items:center;transition:.6;padding:40px 100px;z-index:100;}
+.vanilla2 header.sticky{padding:5px 100px;background:#fff;}
+.vanilla2 header .logo{position:relative;font-weight:700;color:#fff;text-decoration:none;font-size:2em;transition:.6s;text-transform:uppercase;}
+.vanilla2 header ul{width:100%;float:left;display:flex;justify-content:space-between;align-items:center;}
+.vanilla2 header ul li{position:relative;list-style:none;}
+.vanilla2 header ul li a{position:relative;text-decoration:none;color:#fff;margin:0px 15px;transition:0.6s;}
+.vanilla2 header.sticky ul li a{color:#000;}
+.vanilla2 header.sticky .logo{color:#000;}
+.vanilla2 .banner{background:url(Rambagh-Palace-Exterior-Dusk-2.jpg) no-repeat center;width:100%;float:left;height:100vh;background-size:cover;}
+
+
+.vanilla3{display:flex;justify-content:center;height:100vh;align-items:center;background:#5d3800;}
+.vanilla3 .face{width:300px;height:300px;border-radius:50%;background:#ffcd00;position:relative;display:flex;justify-content:center;align-items:center;}
+.vanilla3 .face:before{content:'';position:absolute;top:180px;width:150px;height:70px;background:#b57700;border-bottom-left-radius:70px;border-bottom-right-radius:70px;transition:.5s;}
+.vanilla3 .face:hover:before{top:210px;width:150px;height:20px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;}
+.vanilla3 .eyes{position:relative;top:-40px;display:flex;}
+.vanilla3 .eyes .eye{position:relative;width:80px;height:80px;display:block;background:#fff;margin:0px 15px;border-radius:50%;}
+.vanilla3 .eyes .eye:before{content:'';position:absolute;top:50%;left:25px;width:40px;height:40px;background:#333;border-radius:50%;transform:translate(-50%,-50%);}
+
+.vanilla4{display:flex;justify-content:center;height:100vh;align-items:center;background:#000;cursor:url(covid1.gif), pointer;}
+.vanilla4container{display:flex;justify-content:center;align-items:center;position:relative;}
+.vanilla4container .face{display:flex;justify-content:center;align-items:center;position:relative;background:#ffcd00;width:300px;height:300px;margin:0px 20px;width:300px;height:300px;border-radius:50%;}
+.vanilla4container .face:hover{background:linear-gradient(180deg, #f44336, #f44336, #ffcd00);}
+.vanilla4container .face:before{content:'';position:absolute;top:180px;width:150px;height:70px;border-bottom-left-radius:70px;border-bottom-right-radius:70px;background:#b57700;transition:all 0.5s;}
+.vanilla4container .face:hover:before{top:210px;width:150px;height:20px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;background:#9d0b00;}
+.vanilla4container .face .eyes{position:relative;top:-40px;display:flex;flex-wrap:wrap;}
+.vanilla4container .face .eyes .eye{position:relative;width:80px;height:80px;display:block;margin:0px 15px;background:#fff;border-radius:50%;}
+.vanilla4container .face .eyes .eye:before{content:'';position:absolute;top:50%;left:25px;transform:translate(-50%,-50%);width:40px;height:40px;background:#333;border-radius:50%;}
+
+

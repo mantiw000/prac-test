@@ -1,0 +1,22 @@
+https://medium.com/javascript-in-plain-english/javascript-es6-tutorial-a-complete-crash-course-on-modern-js-a09294bffdb7
+
+
+
+https://www.programiz.com/javascript/ES6
+
+https://www.javatpoint.com/es6-interview-questions
+
+https://vigowebs.medium.com/frequently-asked-es6-interview-questions-and-answers-e3fb7f2dba2
+
+https://www.fullstacktutorials.com/interviews/javascript-es6-interview-questions-11.html
+
+
+
+
+
+https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc    //  js scrollspy
+
+https://codepen.io/zchee/pen/ogzvZZ       //  vanilla js scrollspy
+
+https://dev.to/nikhilroy2/how-to-create-javascript-scrollspy-vanilla-js-tutorial-35o9     // vanilla js scrollspy
+

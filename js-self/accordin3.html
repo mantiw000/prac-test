@@ -1,0 +1,59 @@
+<!doctype html>
+ 
+<html lang="en">
+	<!-- code by webdevtrick ( https://webdevtrick.com ) -->
+<head>
+  <meta charset="utf-8">
+  <title>Accordion 3</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <style>
+  	.accordion {background-color: #eee;color: #444;cursor: pointer;padding: 18px;width: 100%;border: none;text-align: left;outline: none;
+  font-size: 15px;transition: 0.4s;}
+
+.accordion:hover {background-color: #ccc; }
+
+.panel {padding: 0 18px;background-color: white;overflow: hidden;height:0px;transition: all ease-in-out 0.5s;opacity: 0;height:0px;}
+.accordion.active + .panel{height:auto;opacity: 1;}
+  </style>
+
+ 
+
+
+
+</head>
+<body>
+<!-- content starts here -->
+  <h2>Accordion</h2>
+
+<div class="accordion">Section 1</div>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<div class="accordion">Section 2</div>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<div class="accordion">Section 3</div>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+  <!-- contend ends here -->
+  
+
+
+<script type="text/javascript">
+
+var x = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    x[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+    });
+  }
+
+</script>
+
+</body>
+</html>

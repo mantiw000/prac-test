@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="vanilla.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<title>Testing Untitled Document</title>
+</head>
+<body>
+<section>
+<div class="scene1">
+	<div class="moon"></div>
+    <img src="forest.png" class="forestimg" alt="forest" />
+    <img src="cloud1.png" class="cloudimg1" alt="cloud" />
+    <img src="cloud2.png" class="cloudimg2" alt="cloud" />
+    <img src="cloud3.png" class="cloudimg3" alt="cloud" />
+    <img src="cloud1.png" class="cloudimg4" alt="cloud" />
+    <img src="cloud2.png" class="cloudimg5" alt="cloud" />
+    <img src="cloud3.png" class="cloudimg6" alt="cloud" />
+</div>
+<!--  url is https://www.youtube.com/watch?v=NYQqorW2bBI&list=PL5e68lK9hEzd6RUzREoABqimRI4SY63ND&index=150-->
+<script type="text/javascript">
+function stars(){
+	let count = 500;
+	let scene = document.querySelector('.scene1');
+	let a = 0;
+	while (a < count)
+	{
+		let star = document.createElement('a');	
+		let x = Math.floor(Math.random() * window.innerWidth);
+		let y = Math.floor(Math.random() * window.innerHeight);
+		let duration = Math.random() * 10;
+		let size = Math.random() * 2;
+		
+		
+		star.style.left = x+'px';
+		star.style.top = y+'px';
+		star.style.width = 1+size+'px';
+		star.style.height = 1+size+'px';
+		star.style.animationDuration = 5+duration+'s';
+		star.style.animationDelay = duration+'s';
+		
+		scene.appendChild(star);
+		a++
+	}
+}
+stars();
+</script>
+</section>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS Practise</title>
+</head>
+
+<body>
+
+<p>JS Code for manage session during color theming</p>
+<pre>
+$(document).ready(function(e) {
+	
+	var localstor_name = localStorage.getItem("bodybg");
+		console.log(localstor_name);
+		if(localstor_name=='black add')
+		{
+			$('body').addClass('blackbody');
+			$('.colorbalck').removeClass('colorbalck').addClass('colordefault');	
+		}
+		
+		$("body").on("click", ".colorbalck", function(e) {
+		{
+			$(this).removeClass('colorbalck').addClass('colordefault');
+			$('body').addClass('blackbody');
+			localStorage.setItem("bodybg", "black add");
+			alert('balck add');
+		//	var localstor_name = localStorage.getItem("bodybg");
+		//	console.log(localstor_name);
+		}
+		});
+
+		$("body").on("click", ".colordefault", function(e) {
+		{
+			$(this).removeClass('colordefault').addClass('colorbalck');
+			$('body').removeClass('blackbody');
+			localStorage.setItem("bodybg", "black remove");
+			alert('balck remove');
+		//	var localstor_name = localStorage.getItem("bodybg");
+		//	console.log(localstor_name);
+		}
+    	});
+		
+        
+});
+</pre>
+
+<p id="content-change">Javascript content change.</p>
+<button type="button" onClick="document.getElementById('content-change').innerHTML = 'This is new javascript content'">Click Me button</button>
+
+<p><b>Font size increment decrement with proper original default size below:</b></p>
+
+<pre>
+$(document).ready(function () {
+            var y = 2;
+           
+            $('body').delegate('.increase', 'click', function (e) {
+           
+                if (y < 4) {
+                    $('*').each(function () {
+                        var x = parseInt($(this).css("font-size"));
+                        x = x + 1;
+                        $(this).css("font-size", x);
+                    });
+                    y = y + 1;
+                }
+            });
+            $('body').delegate('.decrease', 'click', function (e) {
+                if (y > 0) {
+                    $('*').each(function () {
+                        var x = parseInt($(this).css("font-size"));
+                        x = x - 1;
+                        $(this).css("font-size", x);
+                    });
+                    y = y - 1;
+                }
+            });
+            $('body').delegate('.reset', 'click', function (e) {
+                $('*').each(function () {
+                    $(this).css("font-size", "");
+                });
+                y = 2;
+            });
+
+        });
+</pre>
+
+<p><b>Code over for Font size increment decrement with set custom default size above:</b></p>
+<p><b>Code start for Font size increment decrement with set custom default size below:</b></p>
+<pre>
+ var resize = new Array('body,body *', '.resizable');
+  
+  resize = resize.join(',');
+
+
+  var resetFont = $(resize).css('font-size');
+  $(".fontdefault").click(function() {
+    $(resize).css('font-size', resetFont);
+  });
+
+
+  $(".fontplus").click(function() {
+    var originalFontSize = $(resize).css('font-size');
+    var originalFontNumber = parseFloat(originalFontSize, 10);
+    var newFontSize = originalFontNumber * 1.01;
+    $(resize).css('font-size', newFontSize);
+    return false;
+  });
+
+
+
+  $(".fontminus").click(function() {
+    var originalFontSize = $(resize).css('font-size');
+    var originalFontNumber = parseFloat(originalFontSize, 10);
+    var newFontSize = originalFontNumber * 0.99;
+    $(resize).css('font-size', newFontSize);
+    return false;
+  });
+
+});
+</pre>
+
+<p><b>Code over for Font size increment decrement with set custom default size above</b></p>
+
+
+<p><b>Code start for change special character from every class on body tag below:</b></p>
+
+<pre>
+var classes = jQuery('body').attr('class').split(' ');
+
+var newClass = '';
+for(var i = 0; i < classes.length; i++) {
+  newClass += classes[i].replace("/", "-") + " ";
+}
+
+jQuery("body").removeClass();
+jQuery("body").addClass(newClass);
+
+</pre>
+<p><b>Code over for change special character from every class on body tag below:</b></p>
+
+</body>
+</html>

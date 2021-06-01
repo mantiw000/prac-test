@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="style.css" />
+
+<title>Testing Chart Js</title>
+</head>
+<body>
+	
+<!--            ================chart start=============-->
+    <script src="canvas.js"></script>
+    <script src="Chart.js"></script>
+    <script>
+    window.onload = function () {
+        //chart strat
+        var chart = new CanvasJS.Chart("chartContainer", {
+            title: {
+                text: "Yearly Recap Open v/s Close Report - 2020"
+            },
+            animationEnabled: true,
+            theme: "light2",
+            animationEnabled: true,
+            toolTip: {
+                shared: true,
+                reversed: true
+            },
+            axisY: {
+                title: "Number of Complaints",
+                suffix: " "
+            },
+            legend: {
+                cursor: "pointer",
+                itemclick: toggleDataSeries
+            },
+            data: [
+                {
+                    type: "stackedColumn",
+                    name: "Open",
+                    showInLegend: true,
+                    yValueFormatString: "#,##0 ",
+                    dataPoints: [{"label":2015,"y":0},{"label":2016,"y":0},{"label":2017,"y":0},{"label":2018,"y":0},{"label":2019,"y":0},{"label":2020,"y":76}]                }, {
+                    type: "stackedColumn",
+                    name: "Close",
+                    showInLegend: true,
+                    yValueFormatString: "#,##0 ",
+                    dataPoints: [{"label":2015,"y":50},{"label":2016,"y":0},{"label":2017,"y":0},{"label":2018,"y":0},{"label":2019,"y":0},{"label":2020,"y":0}]                }
+            ]
+        });
+
+        
+        chart.render();
+
+        function toggleDataSeries(e) {
+            if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                e.dataSeries.visible = false;
+            } else {
+                e.dataSeries.visible = true;
+            }
+            chart.render();
+        }
+
+
+    //chart over
+
+    // chart 2 start
+
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+            animationEnabled: true,
+            theme: "light2",
+            animationEnabled: true,
+            title: {
+                text: "Monthly Push-UP Report - 2020"
+            },
+            axisY: {
+                title: "Number of Complaints",
+                suffix: " "
+            },
+            legend: {
+                cursor: "pointer",
+
+            },
+            toolTip: {
+                shared: true
+            },
+            data: [{
+                    type: "spline",
+                    name: "Open",
+                    dataPoints: [{"y":74,"label":"February"},{"y":1,"label":"April"},{"y":1,"label":"September"}]                }, {
+                    type: "spline",
+                    name: "Close",
+                    dataPoints: []                }]
+        });
+
+        chart2.render();
+
+
+    //  chart 2 over
+
+        //chart 3  start
+
+       var chart3 = new CanvasJS.Chart("chartContainer3", {
+            theme: "light2",
+            animationEnabled: true,
+            title: {
+                text: "Usage Share of Desktop Browsers 2020"
+            },
+            subtitles: [{
+                    text: "November 2017"
+                }],
+            data: [{
+                    type: "pie",
+                    yValueFormatString: "#,##0.00\"%\"",
+                    indexLabel: "{label} ({y})",
+                    dataPoints: [{"label":"Monday","y":17},{"label":"Tuesday","y":88},{"label":"Wednesday","y":75},{"label":"Thursday","y":52},{"label":"Friday","y":100},{"label":"Saturday","y":42},{"label":"Sunday","y":30}]                }]
+        });
+        chart3.render();
+
+    //chart 3  over
+
+        //chart 4  start
+
+        var chart4 = new CanvasJS.Chart("chartContainer4", {
+            theme: "light2",
+            animationEnabled: true,
+            title: {
+                text: "World Energy Consumption  - 2020"
+            },
+            data: [{
+                    type: "pie",
+                    indexLabel: "{y}",
+                    yValueFormatString: "#,##0.00\"%\"",
+                    indexLabelPlacement: "inside",
+                    indexLabelFontColor: "#36454F",
+                    indexLabelFontSize: 18,
+                    indexLabelFontWeight: "bolder",
+                    showInLegend: true,
+                   legendText: "{label}",
+                    dataPoints: [{"label":"Monday","y":95},{"label":"Tuesday","y":39},{"label":"Wednesday","y":92},{"label":"Thursday","y":62},{"label":"Friday","y":91},{"label":"Saturday","y":14},{"label":"Sunday","y":73}]    }]
+        });
+        chart4.render();
+
+    //chart 4  over
+
+
+
+
+
+    }
+</script>
+<style>
+.dashboardchart{width:100%;float:left;text-align: center;height:370px;margin:100px 0px;}
+.clear{clear:both;}
+.height30{float:left;height:30px;}
+
+</style>
+<div class="dashboardchart" id="chartContainer"></div>
+    <div class="clear height30"></div>
+
+<div class="dashboardchart" id="chartContainer2"></div>
+    <div class="clear height30"></div>
+<div class="dashboardchart" id="chartContainer3"></div>
+    <div class="clear height30"></div>
+<div class="dashboardchart" id="chartContainer4"></div>
+    <div class="clear height30"></div>
+
+
+
+
+    
+    <!--            ================chart over=============-->
+    <div class="clear height30"></div>
+    
+</body>
+</html>

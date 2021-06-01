@@ -1,0 +1,367 @@
+<!--============app-routing.module.ts start==============-->
+
+// After all import  
+
+const routes: Routes = [
+  {path:"",component:MidhomepageComponent},
+  {path:"innerpage1",component:Innerpg1Component},
+  {path:"innerpage2",component:Innerpg2Component},
+  {path:"innerpage3",component:Innerpg3Component},
+  {path:"testcomp1",component:Testcomp1Component},
+  {path:"testcomp2",component:Testcomp2Component},
+];
+
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+
+<!--============app-routing.module.ts over module coding satrt==============-->
+
+
+
+In the module, their all components, export is must
+
+
+@NgModule({
+  declarations: [Testcomp1Component, Testcomp2Component],
+  imports: [
+    CommonModule
+  ],
+  exports:[Testcomp1Component,Testcomp2Component]    <!--// This is export line-->
+})
+export class TestmoduleModule { }
+
+<!--============module coding over app.module.ts coding start==============-->
+
+In the app.module.ts all   components, modules declaration is must:
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    MidhomepageComponent,
+    Innerpg1Component,
+    Innerpg2Component,
+    Innerpg3Component
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    TestmoduleModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+<!--=====================this is app.compont.html  coding start=============-->
+
+<div class="container">
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>
+
+
+
+<!--=====================this is services coding start=============-->
+
+Step1:   install service and make ur function in the export class.
+
+		export class Newservice1Service {
+			constructor() { }
+
+			display(){
+			return 'This is newservice1 service text';
+			}
+
+		}
+        
+Step2:     In required component, import service by service export class name. Here is 'Newservice1Service'.
+
+			import { Newservice1Service } from '../newservice1.service';   //  import service class
+            
+Step 3:    In the component , export class do following changes:
+
+
+			export class Inner1Component implements OnInit {
+  				text_var: string;    //  Declare variable type
+
+
+                  // constructor and newservice variable for new class
+                  constructor(private _newservice1_var:Newservice1Service){
+                   
+                  }
+            
+                // newservice , method access and initialize
+                
+                  ngOnInit(){
+                 
+                    this.text_var=this._newservice1_var.display();
+                        console.log(this._newservice1_var)
+                  }
+            
+            
+            
+            }            
+
+<!--=====================servce coding over on js and jquery on page code start=============-->
+
+
+Step 1:    declare var $;  below imports as like in the relevaent component.ts file:
+
+			import { Component, OnInit } from '@angular/core';
+			declare var $;
+            
+Step 2:      in the export class we can write our javascript or jquery program as like example:
+
+
+			 multistyle(){                                                            //  this is javascript function
+                document.getElementById('style-change').style.fontSize='35px';
+                document.getElementById('style-change').style.color='#ff0000';
+                document.getElementById('style-change').style.backgroundColor='blue';
+              }
+              jquery(){							 //  this is jquery function
+                $(()=>{
+                  $('.testjquery').click(function(){
+                    $(this).slideToggle();
+                  })
+                })
+              }   
+              
+              
+Step 3:       for call jquery function call jqery() in ngOnInit() function, or in constructor like this:
+
+				export class TestComponent implements OnInit {
+
+                  constructor() { }
+                
+                  ngOnInit() {
+                    this.jquery();   // jquery function call 
+                   }
+                
+                
+                  multistyle(){
+                    document.getElementById('style-change').style.fontSize='35px';
+                    document.getElementById('style-change').style.color='#ff0000';
+                    document.getElementById('style-change').style.backgroundColor='blue';
+                  }
+                  jquery(){
+                    $(()=>{
+                      $('.testjquery').click(function(){
+                        $(this).slideToggle();
+                      })
+                    })
+                  }
+                
+                
+                }
+                
+                
+Step 4:        for call javascript function on component, call function like this:
+
+
+			<button type="button" (click)="multistyle()">Click Here for multistyle</button>
+                
+<!--===================== jquery on page code over data calling by  json httpclient and using of service  start=============-->                
+
+step1:  first in app.module.ts import httpclient module and import in imports , import HttpClientModule, 
+
+		import { HttpClientModule } from '@angular/common/http';
+        
+        imports: [
+            BrowserModule,
+            AppRoutingModule,
+            BrowserAnimationsModule,
+            HttpClientModule,
+            MatGridListModule
+          ],
+          
+Step 2:   in the assets or appropriate place , placed json file
+
+Step 3 :   Create your service and in service.ts file import these. In the constructor , call HttpClient and create constructor variable. and after it creaet own method.
+
+
+			Service.ts file will be such type:
+            
+            
+            	import { Injectable } from '@angular/core';
+                import { HttpClient } from '@angular/common/http';
+                import { Observable,of } from 'rxjs';
+                
+                
+                
+                interface employeedt {
+                  userId: string;
+                  jobTitle : string;
+                  firstName: string;
+                  lastName: string;
+                  employeeCode: string;
+                  region: string; 
+                  phoneNumber: string;
+                  emailAddress: any;   
+                
+                }
+                
+                @Injectable({
+                  providedIn: 'root'
+                })
+                
+                export class EmployeetblService {
+                
+                  constructor(private httpClient: HttpClient) { }
+                 
+                  getProducts(): Observable<employeedt[]> {
+                  return this.httpClient.get<employeedt[]>('../assets/employee-JSON-data.json');
+                  }  
+                 }  
+                 
+                 
+Step 4:    step a:  		In the respective component.ts file, imoport servcice file 
+        
+                                    import { EmployeetblService } from '../employeetbl.service';
+                                    
+                                    
+                                    and after import service file export class create such type:
+                                    
+                                    
+                                    export class FooterComponent implements OnInit {
+                                       detail= [];                         //   array create for convert all content of varible "data1" , content in the array format.
+                                    
+                                      constructor( private employeedt1 : EmployeetblService) { 
+                                        
+                                        this.employeedt1.getProducts().subscribe(data1 => {
+                                         this.detail =data1  ;
+                                         console.log(this.detail)
+                                        
+                                      })
+                                    }
+                                        ngOnInit() {
+                                        }
+                                    }
+                
+Step 5:      step a:        now in the respective component.html , html in grid format would such type:
+
+
+                            <div class="row">
+                            <mat-grid-list cols="4" rowHeight="6:1">
+                                <mat-grid-tile><b>Empoloyee Id</b></mat-grid-tile>
+                                <mat-grid-tile><b>Empoloyee Name</b></mat-grid-tile>
+                                <mat-grid-tile><b>Empoloyee Job</b></mat-grid-tile>
+                                <mat-grid-tile><b>Employee Code</b></mat-grid-tile>
+                              </mat-grid-list>
+                            </div>
+                            <div class="clearfix"></div>
+                            
+                            
+                            <div class="row" *ngIf="detail">
+            
+                                <mat-grid-list  *ngFor="let x of detail" cols="4" rowHeight="10:1">
+                                  <mat-grid-tile>{{x.userId}}</mat-grid-tile>
+                                  <mat-grid-tile>{{x.firstName}} {{x.lastName}} </mat-grid-tile>
+                                  <mat-grid-tile>{{x.jobTitle}}</mat-grid-tile>
+                                  <mat-grid-tile>{{x.employeeCode}}</mat-grid-tile>
+                                </mat-grid-list>
+                                <div class="clearfix"></div>
+                                
+                                </div>
+                                
+                                
+                                
+                                
+Step 4:    step b:  		if json structure under in array as like:
+
+							{
+                                  "Employees": [
+                                    {
+                                      "userId": "krish",
+                                      "jobTitle": "Developer",
+                                      "firstName": "Krish",
+                                      "lastName": "Lee",
+                                      "employeeCode": "E1",
+                                      "region": "CA",
+                                      "phoneNumber": "123456",
+                                      "emailAddress": "krish.lee@learningcontainer.com"
+                                    },
+                                    {
+                                      "userId": "devid",
+                                      "jobTitle": "Developer",
+                                      "firstName": "Devid",
+                                      "lastName": "Rome",
+                                      "employeeCode": "E2",
+                                      "region": "CA",
+                                      "phoneNumber": "1111111",
+                                      "emailAddress": "devid.rome@learningcontainer.com"
+                                    }
+                                    
+                                   ]
+                              }     
+
+
+									In the respective component.ts file, imoport servcice file 
+        
+                                    import { EmployeetblService } from '../employeetbl.service';
+                                    
+                                    
+                                    and after import service file export class create such type:
+                                    
+                                    
+                                    export class Innerpg1Component implements OnInit {
+
+    								employeedetails = [];                        //   array create for convert all content of varible "data1" , content in the array format.
+                                    
+                                      constructor( private employeedata: EmployeedataService) { }
+                                      
+                                          ngOnInit() {
+                                                  this.employeedata.getemployeerecord().subscribe(data1 =>{
+                                                    this.employeedetails=(Object.values(data1))
+                                                    console.log(this.employeedetails)
+                                              })
+                                            }
+                                            
+                                    }
+                
+Step 5:      step b:        now in the respective component.html , html in grid format would such type:
+
+
+                           <div class="grid1str">
+                                <mat-grid-list cols="4"  rowHeight="5:1">
+                                    <mat-grid-tile><b>Employee Id</b></mat-grid-tile>
+                                    <mat-grid-tile><b>Employee Job</b></mat-grid-tile>
+                                    <mat-grid-tile><b>Employee Name</b></mat-grid-tile>
+                                    <mat-grid-tile><b>Employee Code</b></mat-grid-tile>
+                                </mat-grid-list>
+                            </div>
+                            <div *ngIf='employeedetails'>
+                            <div class="grid1str" *ngFor="let x of employeedetails[0]">
+                                <mat-grid-list  cols="4"  rowHeight="5:1">
+                                    <mat-grid-tile>{{x.userId}}</mat-grid-tile>
+                                    <mat-grid-tile>{{x.firstName}} {{x.lastName}} </mat-grid-tile>
+                                    <mat-grid-tile>{{x.jobTitle}}</mat-grid-tile>
+                                    <mat-grid-tile>{{x.employeeCode}}</mat-grid-tile>
+                                </mat-grid-list>
+                            </div>
+                            </div>
+                    
+   <!--=====================   json httpclient and using of service  over=============-->                   
+
+
+                
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+

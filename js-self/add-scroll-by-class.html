@@ -1,0 +1,26 @@
+<!doctype html>
+ 
+<html lang="en">
+	<!-- code by webdevtrick ( https://webdevtrick.com ) -->
+<head>
+  <meta charset="utf-8">
+  <title>Add class on scroll</title>
+  
+</head>
+<body style="min-height: 1000px;">
+
+<header>
+  <ul>
+    <li><a href="">Any thing</a></li><li><a href="">Any thing 1</a></li><li><a href="">Any thing 2</a></li><li><a href="">Any thing 3</a></li><li><a href="">Any thing 4</a></li><li><a href="">Any thing 5</a></li><li><a href="">Any thing 6</a></li>
+  </ul>
+</header>
+
+<script type="text/javascript">
+window.addEventListener("scroll",function(){
+    var header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 0)
+  })
+</script>
+
+</body>
+</html>

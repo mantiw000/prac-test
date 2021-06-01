@@ -1,0 +1,25 @@
+body{background:#00bbff;}
+.custom-formetted-tbl{font-size:14px;}
+.smalltxt{font-size:12px;position:relative;bottom:5px;}
+.custom-formetted-tbl table{width:100%;float:left;border-collapse:collapse;}
+.custom-formetted-tbl table th,.custom-formetted-tbl table td{padding:10px;vertical-align:top;border:1px solid #e0e0e0;transition:all ease-in-out 0.5s;}
+
+.custom-formetted-tbl table th{background:#d0d0d0;font-size:18px;font-weight:700;}
+.custom-formetted-tbl table th .headsubtxt{font-weight:300;}
+.custom-formetted-tbl table tr td:first-child{font-weight:700;}
+.custom-formetted-tbl table tr:nth-child(even) td{background:#f5f5f5;}
+.custom-formetted-tbl table tr:nth-child(odd) td{background:#fff;}
+.custom-formetted-tbl table tr:hover td{background:#f0f0f0;}
+
+.custom-formetted-tbl table tr:nth-child(1n+7){display:none;}
+.loadbtnbx{width:100%;float:left;}
+.loadlink{margin:10px 0px;display:block;color:#fff;}
+.loadlink:hover{color:#fff;}
+.loadlink:focus{text-decoration:none;}
+@media only screen and (max-width:767px)
+{
+	.custom-formetted-tbl table th{font-size:16px;line-height:20px;}
+	.custom-formetted-tbl table td{font-size:13px;}	
+	.smalltxt{font-size:10px;}
+	.custom-formetted-tbl table th .headsubtxt{font-size:14px;}
+}

@@ -1,0 +1,81 @@
+
+<script type="text/javascript">
+  
+  var pgurl = window.location.href;
+  var pos = pgurl.lastIndexOf("/");
+  // var posplus = pos;
+  // console.log(posplus);
+  var res = pgurl.substring(pos);
+  var reseq = res.lastIndexOf("=");
+  var reseqfnl = res.substring(reseq);
+  var reseqfnl = reseqfnl.replace("%20", " ");
+  var reseqfnl = reseqfnl.replace("%20", ".");
+  
+  
+  
+  console.log('This is reseqfnl ' +  reseqfnl);
+  
+  
+   var hrefurl = document.getElementById("leftnav");
+   
+   var hrefli = hrefurl.getElementsByTagName("li");
+   
+    for (var i = 0; i < hrefli.length; i++) {
+      
+      var href_a = hrefli[i].getElementsByTagName("a");
+        for (var j = 0; j < href_a.length; j++) {
+          var a_url = href_a[j].getAttribute("href"); 
+          // console.log("a_url is :" + a_url);
+          var a_pos = a_url.lastIndexOf("/");
+          // var posplus = pos;
+          // console.log(posplus);
+          var a_res = a_url.substring(a_pos);
+          var a_reseq = a_res.lastIndexOf("=");
+          var a_reseqfnl = a_res.substring(a_reseq);
+          var a_reseqfnl = a_reseqfnl.replace("%20", " ");
+          var a_reseqfnl = a_reseqfnl.replace("%20", ".");
+          
+          
+          
+          if(a_reseqfnl == reseqfnl)
+          {
+            console.log("a_reseqfnl value is : " + a_reseqfnl);
+             href_a[j].classList.add('active');
+            // var xyz = href_a[j].parentElement.nodeName;
+            // console.log(xyz);
+             if(href_a[j].parentElement.nodeName = 'LI'){
+              href_a[j].parentElement.classList.add('active-list'); 
+             }
+             if(href_a[j].parentElement.parentElement.parentElement.parentElement.nodeName = 'LI'){
+              href_a[j].parentElement.parentElement.parentElement.parentElement.parentElement.classList.add('active-list'); 
+             }
+             if(href_a[j].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.nodeName = 'LI'){
+              href_a[j].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.add('active-list'); 
+             }
+            
+          }
+        }
+    }
+   
+  
+  
+  /*  $(document).ready(function(e){
+      $('.left-panel li,.left-panel li a').removeClass('active-nav');
+      $(".left-panel li a").each(function(){
+        var hrefvalue = $(this).attr('href');
+        var pos1 = hrefvalue.lastIndexOf("=");
+        var posplus1 = pos1;
+        var res1 = hrefvalue.substring(posplus1);
+        if(res1 == reseqfnl)
+        {
+          console.log('this is res1 = ' + res1);
+          $(this).addClass('active');
+          $(this).parents('li').addClass('active-nav');
+        }
+        });
+    });  */
+    
+  
+  
+  
+</script>

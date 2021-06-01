@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+#marqueecontainer{
+position: relative;
+width: 200px; /*marquee width */
+height: 200px; /*marquee height */
+background-color: white;
+overflow: hidden;
+border: 3px solid orange;
+padding: 2px;
+padding-left: 4px;
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+
+var delayb4scroll=2000 //Specify initial delay before marquee starts to scroll on page (2000=2 seconds)
+var marqueespeed=2 //Specify marquee scroll speed (larger is faster 1-10)
+var pauseit=1 //Pause marquee onMousever (0=no. 1=yes)?
+
+////NO NEED TO EDIT BELOW THIS LINE////////////
+
+var copyspeed=marqueespeed
+var pausespeed=(pauseit==0)? copyspeed: 0
+var actualheight=''
+
+function scrollmarquee(){
+if (parseInt(cross_marquee.style.top)>(actualheight*(-1)+8)) //if scroller hasn't reached the end of its height
+cross_marquee.style.top=parseInt(cross_marquee.style.top)-copyspeed+"px" //move scroller upwards
+else //else, reset to original position
+cross_marquee.style.top=parseInt(marqueeheight)+8+"px"
+}
+
+function initializemarquee(){
+cross_marquee=document.getElementById("vmarquee")
+cross_marquee.style.top=0
+marqueeheight=document.getElementById("marqueecontainer").offsetHeight
+actualheight=cross_marquee.offsetHeight //height of marquee content (much of which is hidden from view)
+if (window.opera || navigator.userAgent.indexOf("Netscape/7")!=-1){ //if Opera or Netscape 7x, add scrollbars to scroll and exit
+cross_marquee.style.height=marqueeheight+"px"
+cross_marquee.style.overflow="scroll"
+return
+}
+setTimeout('lefttime=setInterval("scrollmarquee()",30)', delayb4scroll)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initializemarquee, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializemarquee)
+else if (document.getElementById)
+window.onload=initializemarquee
+
+
+</script>
+
+
+<div id="marqueecontainer" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">
+<div id="vmarquee" style="position: absolute; width: 98%;">
+
+<!--YOUR SCROLL CONTENT HERE-->
+
+<p><strong><a href="http://www.javascriptkit.com/script/script2/phpviewer/">
+Dynamic PHP Picture Viewer</a><br>
+</strong>This script combines PHP with JavaScript to let you easily display all 
+pictures within a directory without having to input their file names into the 
+script! An external PHP file takes care of all the manual labour, by retrieving 
+the list of images inside the directory and passing it onto the viewer script. 
+Spiffy!</p>
+<p><strong><a href="http://www.javascriptkit.com/javatutors/externalphp.shtml">
+External JavaScript and PHP</a></strong><br>
+External JavaScript can reference not just .js files, but PHP scripts as well. 
+See how this is done, and the wonderful possibilities linking PHP to JavaScript 
+bring.</p>
+<p><strong><a href="http://www.javascriptkit.com/dhtmltutors/externalcss.shtml">
+Changing external style sheets using the DOM</a></strong><br>
+Using the DOM, you can access and manipulate external style sheets on the page, 
+from adding/deleting rules to modifying existing ones. This comprehensive 
+tutorial shows you how.</p>
+<p><strong><a href="http://www.javascriptkit.com/howto/htaccess.shtml">
+Comprehensive guide to .htaccess</a></strong><br>
+I've updated this tutorial with two new sections- blocking bad bots and users by 
+referrer.</p>
+<p><strong><a href="http://www.javascriptkit.com/dhtmltutors/cssimage.shtml">
+Applying border &amp; opacity to images onMouseover in CSS</a></strong><br>
+Learn how to spruce up images on your webpage with a border or opacity effect 
+onMouseover, using CSS only.</p>
+<p><strong>
+<a href="http://www.javascriptkit.com/javatutors/selectcontent.shtml">Changing 
+Select element content on the fly</a></strong><br>
+This tutorial explains how to change a select element's content using 
+JavaScript, from adding new options to modifying and deleting them. It also 
+shows how to create a 2 level interdependent select list.</p>
+
+<!--YOUR SCROLL CONTENT HERE-->
+
+</div>
+</div>
+   
+</body>
+</html> 

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="vanilla.css" />
+
+<title>Vanilla Js | Email Validation</title>
+</head>
+<body>
+<!-- https://www.youtube.com/watch?v=6HFpw5fcaD8&list=PL5e68lK9hEzd6RUzREoABqimRI4SY63ND&index=2 -->
+<section class="vanilla3">
+	<div class="face">
+		<div class="eyes">
+			<div class="eye"></div>
+			<div class="eye"></div>
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+document.querySelector('body').addEventListener('mousemove',eyeball);
+function eyeball(){
+	var eyevar = document.querySelectorAll('.eye');
+	eyevar.forEach(function(eyevar){
+	let x = (eyevar.getBoundingClientRect().left) + (eyevar.clientWidth / 2);
+	let y = (eyevar.getBoundingClientRect().top) + (eyevar.clientHeight / 2);
+	let radian = Math.atan2(event.pageX - x, event.pageY - y);
+	let rot = (radian * (180 / Math.PI) * -1) + 270;
+	eyevar.style.transform = "rotate("+ rot + "deg)";
+	});
+}
+</script>
+</body>
+</html>
